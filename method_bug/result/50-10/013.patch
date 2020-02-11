@@ -1,0 +1,28 @@
+--- method_bug.Class1
++++ method_bug.Class1
+@@ -10,6 +10,9 @@
+ 			if(integer == null) return -1;
+ 		}
+ 
++		if (list == null || list.isEmpty()) {
++			return -1;
++		}
+ 		Class2 sample = new Class2();
+ 
+ 		int x, y;
+@@ -22,10 +25,12 @@
+ 		}
+ 
+ 		long sum = 0;
++		if (list == null) {
++			return -1;
++		}
+ 		for(int i : subList) {
+-			if(i >= l && i <= h) {
+-				sum += sample.mul(i); // bug
+-			}
++			if(i >= l && i <= h)
++				sum += sample.div(i);
+ 		}
+ 		return sum;
+ 	}

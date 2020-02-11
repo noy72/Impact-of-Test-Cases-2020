@@ -1,0 +1,26 @@
+--- null_bug.Class1
++++ null_bug.Class1
+@@ -21,7 +21,13 @@
+ 		// 	return -1;
+ 		// }
+ 
++		if (list == null) {
++			return -1;
++		}
+ 		long sum = 0;
++		if (subList == null) {
++			return -1;
++		}
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+ 				sum += sample.div(i);
+--- null_bug.Class2
++++ null_bug.Class2
+@@ -3,6 +3,7 @@
+ 
+ public class Class2 {
+ 	public long mul(int a){
++		int i = 0, l = 0, h = 0;
+ 		return (long)a * a;
+ 	}
+ 

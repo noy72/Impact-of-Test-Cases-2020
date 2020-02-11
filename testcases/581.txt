@@ -1,0 +1,8 @@
+@org.junit.Test
+public void test581(){
+      Class1 class1_0 = new Class1();
+      ArrayList<Integer> arrayList0 = new ArrayList<Integer>();
+      arrayList0.add((Integer) null);
+      long long0 = class1_0.run(arrayList0, 1795, 1795, 1795, 1795);
+      assertEquals((-1L), long0);
+}

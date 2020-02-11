@@ -1,0 +1,44 @@
+--- condition_bug.Class1
++++ condition_bug.Class1
+@@ -7,7 +7,10 @@
+ 			return -1;
+ 		}
+ 		for(Integer integer : list){
+-			if(integer == null) return -1;
++			if(integer == null)
++				if (list == null || list.isEmpty()) {
++					return -1;
++				}
+ 		}
+ 
+ 		Class2 sample = new Class2();
+@@ -17,16 +20,13 @@
+ 		y = (int)(sample.mul(a, n) % list.size());
+ 
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+-		if(subList == null) {
++		if(subList == null)
+ 			return -1;
+-		}
+ 
+ 		long sum = 0;
+-		for(int i : subList) {
+-			if(i >= l) { // bug
++		for(int i : subList)
++			if (i >= l && i <= h)
+ 				sum += sample.div(i);
+-			}
+-		}
+ 		return sum;
+ 	}
+ }
+--- condition_bug.Class2
++++ condition_bug.Class2
+@@ -7,6 +7,7 @@
+ 	}
+ 
+ 	public long mul(int a, int n) {
++		ArrayList<Integer> list=new ArrayList<>();
+ 		return a * n;
+ 	}
+ 

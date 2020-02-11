@@ -1,0 +1,23 @@
+--- overload_bug.Class1
++++ overload_bug.Class1
+@@ -9,6 +9,12 @@
+ 		for(Integer integer : list){
+ 			if(integer == null) return -1;
+ 		}
++		if (list == null) {
++			return -1;
++		}
++		if (list == null) {
++			return -1;
++		}
+ 
+ 		Class2 sample = new Class2();
+ 
+@@ -16,6 +22,7 @@
+ 		x = (int)(sample.mul(a, n) % list.size());
+ 		y = (int)(sample.mul(a, n) % list.size());
+ 
++		x = (int) (sample.mul(a) % list.size());
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+ 		if(subList == null) {
+ 			return -1;

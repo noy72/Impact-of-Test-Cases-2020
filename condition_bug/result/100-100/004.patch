@@ -1,0 +1,13 @@
+--- condition_bug.Class1
++++ condition_bug.Class1
+@@ -23,9 +23,8 @@
+ 
+ 		long sum = 0;
+ 		for(int i : subList) {
+-			if(i >= l) { // bug
++			if (i >= l && i <= h)
+ 				sum += sample.div(i);
+-			}
+ 		}
+ 		return sum;
+ 	}

@@ -1,0 +1,28 @@
+--- method_bug.Class1
++++ method_bug.Class1
+@@ -13,6 +13,9 @@
+ 		Class2 sample = new Class2();
+ 
+ 		int x, y;
++		if (list == null || list.isEmpty()) {
++			return -1;
++		}
+ 		x = (int)(sample.mul(a) % list.size());
+ 		y = (int)(sample.mul(a, n) % list.size());
+ 
+@@ -21,11 +24,12 @@
+ 			return -1;
+ 		}
+ 
++		x = (int) (sample.mul(a) % list.size());
++		x = (int) (sample.mul(a, n) % list.size());
+ 		long sum = 0;
+ 		for(int i : subList) {
+-			if(i >= l && i <= h) {
+-				sum += sample.mul(i); // bug
+-			}
++			if(i >= l && i <= h)
++				sum += sample.div(i);
+ 		}
+ 		return sum;
+ 	}

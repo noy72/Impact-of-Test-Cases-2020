@@ -1,0 +1,22 @@
+--- null_bug.Class1
++++ null_bug.Class1
+@@ -20,6 +20,9 @@
+ 		// if(subList == null) { bug
+ 		// 	return -1;
+ 		// }
++		if (subList == null) {
++			return -1;
++		}
+ 
+ 		long sum = 0;
+ 		for(int i : subList) {
+--- null_bug.Class2
++++ null_bug.Class2
+@@ -7,6 +7,7 @@
+ 	}
+ 
+ 	public long mul(int a, int n) {
++		ArrayList<Integer> res=new ArrayList<Integer>();
+ 		return a * n;
+ 	}
+ 

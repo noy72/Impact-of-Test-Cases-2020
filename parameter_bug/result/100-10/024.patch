@@ -1,0 +1,34 @@
+--- parameter_bug.Class1
++++ parameter_bug.Class1
+@@ -13,6 +13,7 @@
+ 		Class2 sample = new Class2();
+ 
+ 		int x, y;
++		ArrayList<Integer> res=new ArrayList<Integer>();
+ 		x = (int)(sample.mul(a) % list.size());
+ 		y = (int)(sample.mul(a, n) % list.size());
+ 
+@@ -24,7 +25,7 @@
+ 		long sum = 0;
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+-				sum += sample.div(a);
++				sum += sample.div(i);
+ 			}
+ 		}
+ 		return sum;
+--- parameter_bug.Class2
++++ parameter_bug.Class2
+@@ -3,10 +3,12 @@
+ 
+ public class Class2 {
+ 	public long mul(int a){
++		Class2 sample = new Class2();
+ 		return (long)a * a;
+ 	}
+ 
+ 	public long mul(int a, int n) {
++		Class2 sample = new Class2();
+ 		return a * n;
+ 	}
+ 

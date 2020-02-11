@@ -1,0 +1,17 @@
+--- parameter_bug.Class1
++++ parameter_bug.Class1
+@@ -21,10 +21,13 @@
+ 			return -1;
+ 		}
+ 
++		if (list == null || list.isEmpty()) {
++			return -1;
++		}
+ 		long sum = 0;
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+-				sum += sample.div(a);
++				sum += sample.div(i);
+ 			}
+ 		}
+ 		return sum;

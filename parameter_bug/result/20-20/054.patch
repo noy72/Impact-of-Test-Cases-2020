@@ -1,0 +1,32 @@
+--- parameter_bug.Class1
++++ parameter_bug.Class1
+@@ -6,9 +6,7 @@
+ 		if(list == null || list.isEmpty()){
+ 			return -1;
+ 		}
+-		for(Integer integer : list){
+-			if(integer == null) return -1;
+-		}
++		ArrayList<Integer> res=new ArrayList<Integer>();
+ 
+ 		Class2 sample = new Class2();
+ 
+@@ -24,7 +22,7 @@
+ 		long sum = 0;
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+-				sum += sample.div(a);
++				sum += sample.div(i);
+ 			}
+ 		}
+ 		return sum;
+--- parameter_bug.Class2
++++ parameter_bug.Class2
+@@ -21,6 +21,7 @@
+ 
+ 		ArrayList<Integer> res = new ArrayList<Integer>();
+ 		for(; l < r; l++) {
++			ArrayList<Integer> subList=new ArrayList<>();
+ 			res.add(list.get(l));
+ 		}
+ 		return res;

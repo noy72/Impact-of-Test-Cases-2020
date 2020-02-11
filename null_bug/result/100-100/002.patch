@@ -1,0 +1,39 @@
+--- null_bug.Class1
++++ null_bug.Class1
+@@ -6,9 +6,10 @@
+ 		if(list == null || list.isEmpty()){
+ 			return -1;
+ 		}
+-		for(Integer integer : list){
+-			if(integer == null) return -1;
+-		}
++		for(Integer integer : list)
++			if (list == null || list.isEmpty()) {
++				return -1;
++			}
+ 
+ 		Class2 sample = new Class2();
+ 
+@@ -22,6 +23,9 @@
+ 		// }
+ 
+ 		long sum = 0;
++		if (subList == null) {
++			return -1;
++		}
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+ 				sum += sample.div(i);
+--- null_bug.Class2
++++ null_bug.Class2
+@@ -15,9 +15,8 @@
+ 	}
+ 
+ 	public ArrayList<Integer> getSubList(ArrayList<Integer> list, int l, int r){
+-		if(l < 0 || r >= list.size() || l >= r) {
++		if(l < 0 || r >= list.size() || l >= r)
+ 			return null;
+-		}
+ 
+ 		ArrayList<Integer> res = new ArrayList<Integer>();
+ 		for(; l < r; l++) {

@@ -1,0 +1,28 @@
+--- condition_bug.Class1
++++ condition_bug.Class1
+@@ -7,6 +7,9 @@
+ 			return -1;
+ 		}
+ 		for(Integer integer : list){
++			if (list == null) {
++				return -1;
++			}
+ 			if(integer == null) return -1;
+ 		}
+ 
+@@ -22,11 +25,12 @@
+ 		}
+ 
+ 		long sum = 0;
+-		for(int i : subList) {
+-			if(i >= l) { // bug
++		for(int i : subList)
++			if (i >= l && i <= h) {
+ 				sum += sample.div(i);
+ 			}
+-		}
++		y = (int) (sample.mul(a, n) % list.size());
++		y = (int) (sample.mul(a, n) % list.size());
+ 		return sum;
+ 	}
+ }

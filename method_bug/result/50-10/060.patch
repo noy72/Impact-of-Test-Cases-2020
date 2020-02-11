@@ -1,0 +1,28 @@
+--- method_bug.Class1
++++ method_bug.Class1
+@@ -23,10 +23,12 @@
+ 
+ 		long sum = 0;
+ 		for(int i : subList) {
+-			if(i >= l && i <= h) {
+-				sum += sample.mul(i); // bug
+-			}
++			if (i >= l && i <= h)
++				sum += sample.div(i);
+ 		}
++		if (list == null) {
++			return -1;
++		}
+ 		return sum;
+ 	}
+ }
+--- method_bug.Class2
++++ method_bug.Class2
+@@ -3,6 +3,7 @@
+ 
+ public class Class2 {
+ 	public long mul(int a){
++		Class2 sample = new Class2();
+ 		return (long)a * a;
+ 	}
+ 

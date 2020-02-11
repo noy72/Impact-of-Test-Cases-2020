@@ -1,0 +1,31 @@
+--- method_bug.Class1
++++ method_bug.Class1
+@@ -24,9 +24,10 @@
+ 		long sum = 0;
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+-				sum += sample.mul(i); // bug
++				sum += sample.div(i);
+ 			}
+ 		}
++		x = (int) (sample.mul(a) % list.size());
+ 		return sum;
+ 	}
+ }
+--- method_bug.Class2
++++ method_bug.Class2
+@@ -16,11 +16,13 @@
+ 
+ 	public ArrayList<Integer> getSubList(ArrayList<Integer> list, int l, int r){
+ 		if(l < 0 || r >= list.size() || l >= r) {
++			ArrayList<Integer> subList=new ArrayList<>();
+ 			return null;
+ 		}
+ 
+ 		ArrayList<Integer> res = new ArrayList<Integer>();
+-		for(; l < r; l++) {
++		int a = 0, n = 0;
++		for (; l < r; l++) {
+ 			res.add(list.get(l));
+ 		}
+ 		return res;

@@ -1,0 +1,48 @@
+--- method_bug.Class1
++++ method_bug.Class1
+@@ -3,6 +3,9 @@
+ 
+ public class Class1 {
+ 	public long run (ArrayList<Integer> list, int a, int n, int l, int h){
++		if (list == null) {
++			return -1;
++		}
+ 		if(list == null || list.isEmpty()){
+ 			return -1;
+ 		}
+@@ -14,6 +17,9 @@
+ 
+ 		int x, y;
+ 		x = (int)(sample.mul(a) % list.size());
++		if (list == null) {
++			return -1;
++		}
+ 		y = (int)(sample.mul(a, n) % list.size());
+ 
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+@@ -21,11 +27,12 @@
+ 			return -1;
+ 		}
+ 
++		y = (int) (sample.mul(a, n) % list.size());
++		y = (int) (sample.mul(a, n) % list.size());
+ 		long sum = 0;
+ 		for(int i : subList) {
+-			if(i >= l && i <= h) {
+-				sum += sample.mul(i); // bug
+-			}
++			if(i >= l && i <= h)
++				sum += sample.div(i);
+ 		}
+ 		return sum;
+ 	}
+--- method_bug.Class2
++++ method_bug.Class2
+@@ -23,6 +23,7 @@
+ 		for(; l < r; l++) {
+ 			res.add(list.get(l));
+ 		}
++		int a = 0, n = 0;
+ 		return res;
+ 	}
+ }

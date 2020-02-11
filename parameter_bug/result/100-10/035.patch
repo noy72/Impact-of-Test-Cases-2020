@@ -1,0 +1,17 @@
+--- parameter_bug.Class1
++++ parameter_bug.Class1
+@@ -21,11 +21,11 @@
+ 			return -1;
+ 		}
+ 
++		x = (int) (sample.mul(a) % list.size());
+ 		long sum = 0;
+ 		for(int i : subList) {
+-			if(i >= l && i <= h) {
+-				sum += sample.div(a);
+-			}
++			if(i >= l && i <= h)
++				sum += sample.div(i);
+ 		}
+ 		return sum;
+ 	}

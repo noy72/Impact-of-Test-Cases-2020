@@ -1,0 +1,14 @@
+@org.junit.Test
+public void test566(){
+      Class1 class1_0 = new Class1();
+      ArrayList<Integer> arrayList0 = new ArrayList<Integer>();
+      Integer integer0 = new Integer((-464));
+      arrayList0.add(integer0);
+      Integer integer1 = new Integer(270);
+      Integer integer2 = Integer.getInteger("q3*{jRM\"<G?T", integer1);
+      arrayList0.add(integer2);
+      arrayList0.add(integer0);
+      arrayList0.add(integer0);
+      long long0 = class1_0.run(arrayList0, (-454), (-1), (-454), (-464));
+      assertEquals(0L, long0);
+}

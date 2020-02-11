@@ -1,0 +1,5 @@
+@org.junit.Test
+public void test300(){
+      Class1 class1_0 = new Class1();
+      class1_0.run((ArrayList<Integer>) null, (-1990), (-1990), (-1990), (-1990));
+}

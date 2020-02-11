@@ -1,0 +1,22 @@
+@org.junit.Test
+public void test308(){
+      Class1 class1_0 = new Class1();
+      ArrayList<Integer> arrayList0 = new ArrayList<Integer>();
+      class1_0.run(arrayList0, 4039, (-1634), 4039, 4039);
+      Integer integer0 = new Integer(990);
+      arrayList0.add(integer0);
+      class1_0.run(arrayList0, 4039, 1083, 0, (-208));
+      Integer integer1 = new Integer(0);
+      Integer.getInteger("a`}|cS;^vQ.&Cis}7/", (-1610));
+      arrayList0.add(integer1);
+      Integer integer2 = new Integer(990);
+      arrayList0.add(integer2);
+      class1_0.run(arrayList0, (-1610), 1083, 4151, 0);
+      class1_0.run(arrayList0, 0, 0, 2678, 0);
+      class1_0.run(arrayList0, (-208), 0, 1, 0);
+      class1_0.run(arrayList0, 2678, 4151, 0, 2678);
+      class1_0.run(arrayList0, 0, 0, 4151, 1);
+      ArrayList<Integer> arrayList1 = new ArrayList<Integer>();
+      class1_0.run(arrayList1, 4151, 1, 0, (-2429));
+      class1_0.run(arrayList0, (-2429), (-1), 4039, 1670);
+}

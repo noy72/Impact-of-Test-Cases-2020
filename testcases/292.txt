@@ -1,0 +1,9 @@
+@org.junit.Test
+public void test292(){
+      Class1 class1_0 = new Class1();
+      ArrayList<Integer> arrayList0 = new ArrayList<Integer>();
+      arrayList0.add((Integer) null);
+      class1_0.run(arrayList0, 68, 68, 68, 68);
+      ArrayList<Integer> arrayList1 = new ArrayList<Integer>();
+      class1_0.run(arrayList1, 68, 68, 68, 68);
+}

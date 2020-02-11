@@ -1,0 +1,50 @@
+--- null_bug.Class1
++++ null_bug.Class1
+@@ -3,6 +3,9 @@
+ 
+ public class Class1 {
+ 	public long run (ArrayList<Integer> list, int a, int n, int l, int h){
++		if (list == null) {
++			return -1;
++		}
+ 		if(list == null || list.isEmpty()){
+ 			return -1;
+ 		}
+@@ -21,6 +24,9 @@
+ 		// 	return -1;
+ 		// }
+ 
++		if (subList == null) {
++			return -1;
++		}
+ 		long sum = 0;
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+--- null_bug.Class2
++++ null_bug.Class2
+@@ -3,6 +3,7 @@
+ 
+ public class Class2 {
+ 	public long mul(int a){
++		long sum = 0;
+ 		return (long)a * a;
+ 	}
+ 
+@@ -16,13 +17,16 @@
+ 
+ 	public ArrayList<Integer> getSubList(ArrayList<Integer> list, int l, int r){
+ 		if(l < 0 || r >= list.size() || l >= r) {
+-			return null;
++			if (l < 0 || r >= list.size() || l >= r) {
++				return null;
++			}
+ 		}
+ 
+ 		ArrayList<Integer> res = new ArrayList<Integer>();
+ 		for(; l < r; l++) {
+ 			res.add(list.get(l));
+ 		}
++		int x, y;
+ 		return res;
+ 	}
+ }

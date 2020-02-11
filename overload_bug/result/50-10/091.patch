@@ -1,0 +1,15 @@
+--- overload_bug.Class1
++++ overload_bug.Class1
+@@ -16,8 +16,12 @@
+ 		x = (int)(sample.mul(a, n) % list.size());
+ 		y = (int)(sample.mul(a, n) % list.size());
+ 
++		x = (int) (sample.mul(a) % list.size());
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+ 		if(subList == null) {
++			if (list == null) {
++				return -1;
++			}
+ 			return -1;
+ 		}
+ 

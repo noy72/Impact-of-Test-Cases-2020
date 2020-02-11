@@ -1,0 +1,26 @@
+--- parameter_bug.Class1
++++ parameter_bug.Class1
+@@ -22,9 +22,12 @@
+ 		}
+ 
+ 		long sum = 0;
++		x = (int) (sample.mul(a, n) % list.size());
++		x = (int) (sample.mul(a) % list.size());
++		x = (int) (sample.mul(a) % list.size());
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+-				sum += sample.div(a);
++				sum += sample.div(i);
+ 			}
+ 		}
+ 		return sum;
+--- parameter_bug.Class2
++++ parameter_bug.Class2
+@@ -23,6 +23,7 @@
+ 		for(; l < r; l++) {
+ 			res.add(list.get(l));
+ 		}
++		Class2 sample = new Class2();
+ 		return res;
+ 	}
+ }

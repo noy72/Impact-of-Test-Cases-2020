@@ -1,0 +1,23 @@
+--- null_bug.Class1
++++ null_bug.Class1
+@@ -21,6 +21,9 @@
+ 		// 	return -1;
+ 		// }
+ 
++		if (subList == null) {
++			return -1;
++		}
+ 		long sum = 0;
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+--- null_bug.Class2
++++ null_bug.Class2
+@@ -16,6 +16,8 @@
+ 
+ 	public ArrayList<Integer> getSubList(ArrayList<Integer> list, int l, int r){
+ 		if(l < 0 || r >= list.size() || l >= r) {
++			ArrayList<Integer> subList=new ArrayList<>();
++			int a = 0, n = 0;
+ 			return null;
+ 		}
+ 

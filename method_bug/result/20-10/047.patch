@@ -1,0 +1,35 @@
+--- method_bug.Class1
++++ method_bug.Class1
+@@ -10,6 +10,9 @@
+ 			if(integer == null) return -1;
+ 		}
+ 
++		if (list == null || list.isEmpty()) {
++			return -1;
++		}
+ 		Class2 sample = new Class2();
+ 
+ 		int x, y;
+@@ -22,9 +25,11 @@
+ 		}
+ 
+ 		long sum = 0;
++		x = (int) (sample.mul(a) % list.size());
++		x = (int) (sample.mul(a) % list.size());
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+-				sum += sample.mul(i); // bug
++				sum += sample.div(i);
+ 			}
+ 		}
+ 		return sum;
+--- method_bug.Class2
++++ method_bug.Class2
+@@ -7,6 +7,7 @@
+ 	}
+ 
+ 	public long mul(int a, int n) {
++		Class2 sample = new Class2();
+ 		return a * n;
+ 	}
+ 

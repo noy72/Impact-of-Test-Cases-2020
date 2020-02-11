@@ -1,0 +1,45 @@
+--- condition_bug.Class1
++++ condition_bug.Class1
+@@ -17,16 +17,17 @@
+ 		y = (int)(sample.mul(a, n) % list.size());
+ 
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
++		x = (int) (sample.mul(a) % list.size());
+ 		if(subList == null) {
+ 			return -1;
+ 		}
+ 
+ 		long sum = 0;
+-		for(int i : subList) {
+-			if(i >= l) { // bug
+-				sum += sample.div(i);
+-			}
+-		}
++		for(int i : subList)
++			if (i <= h)
++				if (i >= l) {
++					sum += sample.div(i);
++				}
+ 		return sum;
+ 	}
+ }
+--- condition_bug.Class2
++++ condition_bug.Class2
+@@ -15,14 +15,15 @@
+ 	}
+ 
+ 	public ArrayList<Integer> getSubList(ArrayList<Integer> list, int l, int r){
+-		if(l < 0 || r >= list.size() || l >= r) {
++		if(l < 0 || r >= list.size() || l >= r)
+ 			return null;
+-		}
+ 
+ 		ArrayList<Integer> res = new ArrayList<Integer>();
+ 		for(; l < r; l++) {
+ 			res.add(list.get(l));
++			int x, y;
+ 		}
++		long sum = 0;
+ 		return res;
+ 	}
+ }

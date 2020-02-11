@@ -1,0 +1,24 @@
+--- null_bug.Class1
++++ null_bug.Class1
+@@ -3,9 +3,10 @@
+ 
+ public class Class1 {
+ 	public long run (ArrayList<Integer> list, int a, int n, int l, int h){
+-		if(list == null || list.isEmpty()){
++		if (list == null) {
+ 			return -1;
+ 		}
++		if(list == null || list.isEmpty())
+ 		for(Integer integer : list){
+ 			if(integer == null) return -1;
+ 		}
+@@ -22,6 +23,9 @@
+ 		// }
+ 
+ 		long sum = 0;
++		if (subList == null) {
++			return -1;
++		}
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+ 				sum += sample.div(i);

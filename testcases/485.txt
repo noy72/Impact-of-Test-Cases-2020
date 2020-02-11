@@ -1,0 +1,14 @@
+@org.junit.Test
+public void test485(){
+      Class1 class1_0 = new Class1();
+      Integer integer0 = new Integer(914);
+      ArrayList<Integer> arrayList0 = new ArrayList<Integer>();
+      arrayList0.add(integer0);
+      arrayList0.add(integer0);
+      arrayList0.add(integer0);
+      Integer integer1 = new Integer(3308);
+      arrayList0.add(integer1);
+      arrayList0.add(integer0);
+      long long0 = class1_0.run(arrayList0, 914, 1, 914, 914);
+      assertEquals(914L, long0);
+}

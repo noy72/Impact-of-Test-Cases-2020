@@ -1,0 +1,36 @@
+--- condition_bug.Class1
++++ condition_bug.Class1
+@@ -6,9 +6,10 @@
+ 		if(list == null || list.isEmpty()){
+ 			return -1;
+ 		}
+-		for(Integer integer : list){
+-			if(integer == null) return -1;
+-		}
++		for(Integer integer : list)
++			if (list == null) {
++				return -1;
++			}
+ 
+ 		Class2 sample = new Class2();
+ 
+@@ -17,16 +18,13 @@
+ 		y = (int)(sample.mul(a, n) % list.size());
+ 
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+-		if(subList == null) {
++		if(subList == null)
+ 			return -1;
+-		}
+ 
+ 		long sum = 0;
+-		for(int i : subList) {
+-			if(i >= l) { // bug
++		for(int i : subList)
++			if (i >= l && i <= h)
+ 				sum += sample.div(i);
+-			}
+-		}
+ 		return sum;
+ 	}
+ }

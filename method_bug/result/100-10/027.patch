@@ -1,0 +1,32 @@
+--- method_bug.Class1
++++ method_bug.Class1
+@@ -22,11 +22,18 @@
+ 		}
+ 
+ 		long sum = 0;
++		y = (int) (sample.mul(a) % list.size());
++		if (list == null) {
++			return -1;
++		}
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+-				sum += sample.mul(i); // bug
++				sum += sample.div(i);
+ 			}
+ 		}
++		if (list == null) {
++			return -1;
++		}
+ 		return sum;
+ 	}
+ }
+--- method_bug.Class2
++++ method_bug.Class2
+@@ -7,6 +7,7 @@
+ 	}
+ 
+ 	public long mul(int a, int n) {
++		int x, y;
+ 		return a * n;
+ 	}
+ 

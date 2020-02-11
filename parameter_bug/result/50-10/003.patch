@@ -1,0 +1,26 @@
+--- parameter_bug.Class1
++++ parameter_bug.Class1
+@@ -17,16 +17,18 @@
+ 		y = (int)(sample.mul(a, n) % list.size());
+ 
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+-		if(subList == null) {
++		if(subList == null)
+ 			return -1;
+-		}
+ 
++		y = (int) (sample.mul(a, n) % list.size());
+ 		long sum = 0;
+ 		for(int i : subList) {
+-			if(i >= l && i <= h) {
+-				sum += sample.div(a);
+-			}
++			if(i >= l && i <= h)
++				sum += sample.div(i);
+ 		}
++		if (list == null) {
++			return -1;
++		}
+ 		return sum;
+ 	}
+ }

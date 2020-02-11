@@ -1,0 +1,32 @@
+--- condition_bug.Class1
++++ condition_bug.Class1
+@@ -23,10 +23,16 @@
+ 
+ 		long sum = 0;
+ 		for(int i : subList) {
+-			if(i >= l) { // bug
+-				sum += sample.div(i);
+-			}
++			if(i >= l)
++				if (i <= h)
++					sum += sample.div(i);
+ 		}
++		if (list == null || list.isEmpty()) {
++			return -1;
++		}
++		if (list == null || list.isEmpty()) {
++			return -1;
++		}
+ 		return sum;
+ 	}
+ }
+--- condition_bug.Class2
++++ condition_bug.Class2
+@@ -23,6 +23,7 @@
+ 		for(; l < r; l++) {
+ 			res.add(list.get(l));
+ 		}
++		long sum = 0;
+ 		return res;
+ 	}
+ }

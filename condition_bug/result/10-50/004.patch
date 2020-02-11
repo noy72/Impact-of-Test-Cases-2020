@@ -1,0 +1,45 @@
+--- condition_bug.Class1
++++ condition_bug.Class1
+@@ -3,9 +3,8 @@
+ 
+ public class Class1 {
+ 	public long run (ArrayList<Integer> list, int a, int n, int l, int h){
+-		if(list == null || list.isEmpty()){
++		if(list == null || list.isEmpty())
+ 			return -1;
+-		}
+ 		for(Integer integer : list){
+ 			if(integer == null) return -1;
+ 		}
+@@ -22,11 +21,9 @@
+ 		}
+ 
+ 		long sum = 0;
+-		for(int i : subList) {
+-			if(i >= l) { // bug
++		for(int i : subList)
++			if (i >= l && i <= h)
+ 				sum += sample.div(i);
+-			}
+-		}
+ 		return sum;
+ 	}
+ }
+--- condition_bug.Class2
++++ condition_bug.Class2
+@@ -3,6 +3,7 @@
+ 
+ public class Class2 {
+ 	public long mul(int a){
++		ArrayList<Integer> res=new ArrayList<Integer>();
+ 		return (long)a * a;
+ 	}
+ 
+@@ -16,6 +17,7 @@
+ 
+ 	public ArrayList<Integer> getSubList(ArrayList<Integer> list, int l, int r){
+ 		if(l < 0 || r >= list.size() || l >= r) {
++			long sum = 0;
+ 			return null;
+ 		}
+ 

@@ -1,0 +1,26 @@
+--- parameter_bug.Class1
++++ parameter_bug.Class1
+@@ -22,11 +22,8 @@
+ 		}
+ 
+ 		long sum = 0;
+-		for(int i : subList) {
+-			if(i >= l && i <= h) {
+-				sum += sample.div(a);
+-			}
+-		}
++		for(int i : subList)
++			sum += sample.div(i);
+ 		return sum;
+ 	}
+ }
+--- parameter_bug.Class2
++++ parameter_bug.Class2
+@@ -20,6 +20,7 @@
+ 		}
+ 
+ 		ArrayList<Integer> res = new ArrayList<Integer>();
++		long sum = 0;
+ 		for(; l < r; l++) {
+ 			res.add(list.get(l));
+ 		}

@@ -1,0 +1,19 @@
+--- null_bug.Class1
++++ null_bug.Class1
+@@ -22,11 +22,16 @@
+ 		// }
+ 
+ 		long sum = 0;
++		if (subList == null) {
++			return -1;
++		}
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+ 				sum += sample.div(i);
+ 			}
+ 		}
++		y = (int) (sample.mul(a, n) % list.size());
++		y = (int) (sample.mul(a, n) % list.size());
+ 		return sum;
+ 	}
+ }

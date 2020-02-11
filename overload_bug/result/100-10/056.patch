@@ -1,0 +1,28 @@
+--- overload_bug.Class1
++++ overload_bug.Class1
+@@ -11,11 +11,15 @@
+ 		}
+ 
+ 		Class2 sample = new Class2();
++		if (list == null) {
++			return -1;
++		}
+ 
+ 		int x, y;
+ 		x = (int)(sample.mul(a, n) % list.size());
+ 		y = (int)(sample.mul(a, n) % list.size());
+ 
++		x = (int) (sample.mul(a) % list.size());
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+ 		if(subList == null) {
+ 			return -1;
+--- overload_bug.Class2
++++ overload_bug.Class2
+@@ -7,6 +7,7 @@
+ 	}
+ 
+ 	public long mul(int a, int n) {
++		int x, y;
+ 		return a * n;
+ 	}
+ 

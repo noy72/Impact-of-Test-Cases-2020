@@ -1,0 +1,26 @@
+--- condition_bug.Class1
++++ condition_bug.Class1
+@@ -22,11 +22,10 @@
+ 		}
+ 
+ 		long sum = 0;
+-		for(int i : subList) {
+-			if(i >= l) { // bug
++		for(int i : subList)
++			if (i >= l && i <= h) {
+ 				sum += sample.div(i);
+ 			}
+-		}
+ 		return sum;
+ 	}
+ }
+--- condition_bug.Class2
++++ condition_bug.Class2
+@@ -20,6 +20,7 @@
+ 		}
+ 
+ 		ArrayList<Integer> res = new ArrayList<Integer>();
++		long sum = 0;
+ 		for(; l < r; l++) {
+ 			res.add(list.get(l));
+ 		}

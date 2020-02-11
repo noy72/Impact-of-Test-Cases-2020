@@ -1,0 +1,10 @@
+@org.junit.Test
+public void test306(){
+      Class1 class1_0 = new Class1();
+      ArrayList<Integer> arrayList0 = new ArrayList<Integer>();
+      arrayList0.clone();
+      arrayList0.add((Integer) null);
+      class1_0.run(arrayList0, 279, (-1551), (-2099), (-1551));
+      class1_0.run(arrayList0, 279, 279, 279, 1);
+      class1_0.run(arrayList0, (-1), 3269, 3295, 1);
+}

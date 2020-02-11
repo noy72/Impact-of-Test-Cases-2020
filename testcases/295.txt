@@ -1,0 +1,11 @@
+@org.junit.Test
+public void test295(){
+      Class1 class1_0 = new Class1();
+      ArrayList<Integer> arrayList0 = new ArrayList<Integer>();
+      Integer integer0 = new Integer(0);
+      arrayList0.add(0, integer0);
+      Integer.getInteger("");
+      arrayList0.add((Integer) null);
+      class1_0.run(arrayList0, (-752), (-752), (-752), (-752));
+      class1_0.run(arrayList0, 2784, (-752), 0, 0);
+}

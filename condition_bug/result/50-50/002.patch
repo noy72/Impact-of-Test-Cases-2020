@@ -1,0 +1,31 @@
+--- condition_bug.Class1
++++ condition_bug.Class1
+@@ -22,11 +22,9 @@
+ 		}
+ 
+ 		long sum = 0;
+-		for(int i : subList) {
+-			if(i >= l) { // bug
++		for(int i : subList)
++			if (i >= l && i <= h)
+ 				sum += sample.div(i);
+-			}
+-		}
+ 		return sum;
+ 	}
+ }
+--- condition_bug.Class2
++++ condition_bug.Class2
+@@ -3,10 +3,12 @@
+ 
+ public class Class2 {
+ 	public long mul(int a){
++		int i = 0, l = 0, h = 0;
+ 		return (long)a * a;
+ 	}
+ 
+ 	public long mul(int a, int n) {
++		Class2 sample = new Class2();
+ 		return a * n;
+ 	}
+ 

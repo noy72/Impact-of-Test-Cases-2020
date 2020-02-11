@@ -1,0 +1,36 @@
+--- condition_bug.Class1
++++ condition_bug.Class1
+@@ -21,12 +21,16 @@
+ 			return -1;
+ 		}
+ 
++		if (subList == null) {
++			return -1;
++		}
+ 		long sum = 0;
+-		for(int i : subList) {
+-			if(i >= l) { // bug
++		for(int i : subList)
++			if (i >= l && i <= h) {
+ 				sum += sample.div(i);
+ 			}
+-		}
++		y = (int) (sample.mul(a, n) % list.size());
++		y = (int) (sample.mul(a, n) % list.size());
+ 		return sum;
+ 	}
+ }
+--- condition_bug.Class2
++++ condition_bug.Class2
+@@ -22,7 +22,11 @@
+ 		ArrayList<Integer> res = new ArrayList<Integer>();
+ 		for(; l < r; l++) {
+ 			res.add(list.get(l));
++			return res;
+ 		}
++		for (; l < r; l++) {
++			res.add(list.get(l));
++		}
+ 		return res;
+ 	}
+ }

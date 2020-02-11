@@ -1,0 +1,37 @@
+--- method_bug.Class1
++++ method_bug.Class1
+@@ -3,12 +3,8 @@
+ 
+ public class Class1 {
+ 	public long run (ArrayList<Integer> list, int a, int n, int l, int h){
+-		if(list == null || list.isEmpty()){
+-			return -1;
+-		}
+-		for(Integer integer : list){
+-			if(integer == null) return -1;
+-		}
++		if(list == null || list.isEmpty())
++			return a * n;
+ 
+ 		Class2 sample = new Class2();
+ 
+@@ -21,11 +17,16 @@
+ 			return -1;
+ 		}
+ 
++		if (list == null || list.isEmpty()) {
++			return -1;
++		}
++		if (list == null || list.isEmpty()) {
++			return -1;
++		}
+ 		long sum = 0;
+ 		for(int i : subList) {
+-			if(i >= l && i <= h) {
+-				sum += sample.mul(i); // bug
+-			}
++			if(i >= l && i <= h)
++				sum += sample.div(i);
+ 		}
+ 		return sum;
+ 	}

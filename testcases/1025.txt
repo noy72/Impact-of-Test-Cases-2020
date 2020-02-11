@@ -1,0 +1,13 @@
+@org.junit.Test
+public void test1025(){
+      Class1 class1_0 = new Class1();
+      ArrayList<Integer> arrayList0 = new ArrayList<Integer>();
+      Integer integer0 = new Integer((-2583));
+      arrayList0.add(integer0);
+      Integer integer1 = new Integer((-677));
+      arrayList0.add(integer1);
+      arrayList0.add(integer1);
+      arrayList0.add(integer0);
+      long long0 = class1_0.run(arrayList0, (-1486), (-549), (-677), (-677));
+      assertEquals((-338L), long0);
+}

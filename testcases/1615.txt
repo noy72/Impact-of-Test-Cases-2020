@@ -1,0 +1,14 @@
+@org.junit.Test
+public void test1615(){
+      Class1 class1_0 = new Class1();
+      ArrayList<Integer> arrayList0 = new ArrayList<Integer>();
+      Integer integer0 = new Integer((-1));
+      arrayList0.add(integer0);
+      Integer integer1 = new Integer(1182);
+      arrayList0.add(integer1);
+      LinkedList<Integer> linkedList0 = new LinkedList<Integer>(arrayList0);
+      linkedList0.add(integer1);
+      arrayList0.addAll((Collection<? extends Integer>) linkedList0);
+      long long0 = class1_0.run(arrayList0, 336, 3449, 1, 3449);
+      assertEquals(1182L, long0);
+}

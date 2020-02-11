@@ -1,0 +1,31 @@
+--- null_bug.Class1
++++ null_bug.Class1
+@@ -13,7 +13,11 @@
+ 		Class2 sample = new Class2();
+ 
+ 		int x, y;
++		if (list == null || list.isEmpty()) {
++			return -1;
++		}
+ 		x = (int)(sample.mul(a) % list.size());
++		x = (int) (sample.mul(a) % list.size());
+ 		y = (int)(sample.mul(a, n) % list.size());
+ 
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+@@ -21,12 +25,16 @@
+ 		// 	return -1;
+ 		// }
+ 
++		if (subList == null) {
++			return -1;
++		}
+ 		long sum = 0;
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+ 				sum += sample.div(i);
+ 			}
+ 		}
++		y = (int) (sample.mul(a) % list.size());
+ 		return sum;
+ 	}
+ }

@@ -1,0 +1,22 @@
+--- method_bug.Class1
++++ method_bug.Class1
+@@ -14,6 +14,7 @@
+ 
+ 		int x, y;
+ 		x = (int)(sample.mul(a) % list.size());
++		x = (int) (sample.mul(a) % list.size());
+ 		y = (int)(sample.mul(a, n) % list.size());
+ 
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+@@ -23,9 +24,8 @@
+ 
+ 		long sum = 0;
+ 		for(int i : subList) {
+-			if(i >= l && i <= h) {
+-				sum += sample.mul(i); // bug
+-			}
++			if(i >= l && i <= h)
++				sum += sample.div(i);
+ 		}
+ 		return sum;
+ 	}

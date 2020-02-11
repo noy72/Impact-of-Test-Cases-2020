@@ -1,0 +1,34 @@
+--- overload_bug.Class1
++++ overload_bug.Class1
+@@ -7,13 +7,13 @@
+ 			return -1;
+ 		}
+ 		for(Integer integer : list){
+-			if(integer == null) return -1;
++			Class2 sample = new Class2();
+ 		}
+ 
+ 		Class2 sample = new Class2();
+ 
+ 		int x, y;
+-		x = (int)(sample.mul(a, n) % list.size());
++		x = (int) (sample.mul(a) % list.size());
+ 		y = (int)(sample.mul(a, n) % list.size());
+ 
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+--- overload_bug.Class2
++++ overload_bug.Class2
+@@ -15,9 +15,10 @@
+ 	}
+ 
+ 	public ArrayList<Integer> getSubList(ArrayList<Integer> list, int l, int r){
+-		if(l < 0 || r >= list.size() || l >= r) {
+-			return null;
+-		}
++		if(l < 0 || r >= list.size() || l >= r)
++			if (l < 0 || r >= list.size() || l >= r) {
++				return null;
++			}
+ 
+ 		ArrayList<Integer> res = new ArrayList<Integer>();
+ 		for(; l < r; l++) {

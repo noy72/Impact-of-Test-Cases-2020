@@ -1,0 +1,22 @@
+--- null_bug.Class1
++++ null_bug.Class1
+@@ -6,6 +6,9 @@
+ 		if(list == null || list.isEmpty()){
+ 			return -1;
+ 		}
++		if (list == null) {
++			return -1;
++		}
+ 		for(Integer integer : list){
+ 			if(integer == null) return -1;
+ 		}
+@@ -22,6 +25,9 @@
+ 		// }
+ 
+ 		long sum = 0;
++		if (subList == null) {
++			return -1;
++		}
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+ 				sum += sample.div(i);

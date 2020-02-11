@@ -1,0 +1,36 @@
+--- condition_bug.Class1
++++ condition_bug.Class1
+@@ -21,12 +21,19 @@
+ 			return -1;
+ 		}
+ 
++		if (subList == null) {
++			return -1;
++		}
++		if (list == null || list.isEmpty()) {
++			return -1;
++		}
+ 		long sum = 0;
+-		for(int i : subList) {
+-			if(i >= l) { // bug
+-				sum += sample.div(i);
++		for(int i : subList)
++			if (i >= l && i <= h) {
++				if (i >= l) {
++					sum += sample.div(i);
++				}
+ 			}
+-		}
+ 		return sum;
+ 	}
+ }
+--- condition_bug.Class2
++++ condition_bug.Class2
+@@ -7,6 +7,7 @@
+ 	}
+ 
+ 	public long mul(int a, int n) {
++		int i = 0, l = 0, h = 0;
+ 		return a * n;
+ 	}
+ 

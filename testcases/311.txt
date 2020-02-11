@@ -1,0 +1,21 @@
+@org.junit.Test
+public void test311(){
+      Class1 class1_0 = new Class1();
+      ArrayList<Integer> arrayList0 = new ArrayList<Integer>();
+      arrayList0.iterator();
+      ArrayList<Integer> arrayList1 = new ArrayList<Integer>();
+      arrayList0.addAll(0, (Collection<? extends Integer>) arrayList1);
+      Integer integer0 = new Integer(12);
+      arrayList0.add(integer0);
+      arrayList0.add(integer0);
+      class1_0.run(arrayList0, 0, 0, 0, (-1));
+      Integer integer1 = new Integer(0);
+      Integer.toUnsignedString(0);
+      arrayList0.add(integer1);
+      arrayList0.add(integer0);
+      class1_0.run(arrayList0, 12, 0, (-1186), (-1));
+      class1_0.run(arrayList0, (-1954), (-1641), 0, 12);
+      class1_0.run(arrayList1, 0, (-607), 12, (-1641));
+      Integer integer2 = new Integer(0);
+      class1_0.run(arrayList0, 1, 2772, (-439), (-607));
+}

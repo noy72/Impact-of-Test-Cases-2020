@@ -1,0 +1,35 @@
+--- method_bug.Class1
++++ method_bug.Class1
+@@ -3,6 +3,9 @@
+ 
+ public class Class1 {
+ 	public long run (ArrayList<Integer> list, int a, int n, int l, int h){
++		if (list == null) {
++			return -1;
++		}
+ 		if(list == null || list.isEmpty()){
+ 			return -1;
+ 		}
+@@ -24,9 +27,11 @@
+ 		long sum = 0;
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+-				sum += sample.mul(i); // bug
++				sum += sample.div(i);
++				x = (int) (sample.mul(a) % list.size());
+ 			}
+ 		}
++		y = (int) (sample.mul(a, n) % list.size());
+ 		return sum;
+ 	}
+ }
+--- method_bug.Class2
++++ method_bug.Class2
+@@ -7,6 +7,7 @@
+ 	}
+ 
+ 	public long mul(int a, int n) {
++		int x, y;
+ 		return a * n;
+ 	}
+ 

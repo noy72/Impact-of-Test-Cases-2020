@@ -1,0 +1,29 @@
+--- parameter_bug.Class1
++++ parameter_bug.Class1
+@@ -23,9 +23,8 @@
+ 
+ 		long sum = 0;
+ 		for(int i : subList) {
+-			if(i >= l && i <= h) {
+-				sum += sample.div(a);
+-			}
++			if(i >= l && i <= h)
++			sum += sample.div(i);
+ 		}
+ 		return sum;
+ 	}
+--- parameter_bug.Class2
++++ parameter_bug.Class2
+@@ -7,10 +7,12 @@
+ 	}
+ 
+ 	public long mul(int a, int n) {
++		Class2 sample = new Class2();
+ 		return a * n;
+ 	}
+ 
+ 	public int div(int a) {
++		int x, y;
+ 		return a / 2;
+ 	}
+ 

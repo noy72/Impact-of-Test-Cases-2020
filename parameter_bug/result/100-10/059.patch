@@ -1,0 +1,30 @@
+--- parameter_bug.Class1
++++ parameter_bug.Class1
+@@ -22,9 +22,15 @@
+ 		}
+ 
+ 		long sum = 0;
++		if (subList == null) {
++			return -1;
++		}
++		if (subList == null) {
++			return -1;
++		}
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+-				sum += sample.div(a);
++				sum += sample.div(i);
+ 			}
+ 		}
+ 		return sum;
+--- parameter_bug.Class2
++++ parameter_bug.Class2
+@@ -11,6 +11,8 @@
+ 	}
+ 
+ 	public int div(int a) {
++		Class2 sample = new Class2();
++		int x, y;
+ 		return a / 2;
+ 	}
+ 

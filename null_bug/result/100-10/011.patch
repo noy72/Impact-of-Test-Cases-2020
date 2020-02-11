@@ -1,0 +1,26 @@
+--- null_bug.Class1
++++ null_bug.Class1
+@@ -20,6 +20,9 @@
+ 		// if(subList == null) { bug
+ 		// 	return -1;
+ 		// }
++		if (subList == null) {
++			return -1;
++		}
+ 
+ 		long sum = 0;
+ 		for(int i : subList) {
+--- null_bug.Class2
++++ null_bug.Class2
+@@ -20,9 +20,11 @@
+ 		}
+ 
+ 		ArrayList<Integer> res = new ArrayList<Integer>();
++		Class2 sample = new Class2();
+ 		for(; l < r; l++) {
+ 			res.add(list.get(l));
+ 		}
++		int x, y;
+ 		return res;
+ 	}
+ }

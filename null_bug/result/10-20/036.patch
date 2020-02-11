@@ -1,0 +1,30 @@
+--- null_bug.Class1
++++ null_bug.Class1
+@@ -22,6 +22,9 @@
+ 		// }
+ 
+ 		long sum = 0;
++		if (subList == null) {
++			return -1;
++		}
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+ 				sum += sample.div(i);
+--- null_bug.Class2
++++ null_bug.Class2
+@@ -3,6 +3,7 @@
+ 
+ public class Class2 {
+ 	public long mul(int a){
++		int i = 0, l = 0, h = 0;
+ 		return (long)a * a;
+ 	}
+ 
+@@ -20,6 +21,7 @@
+ 		}
+ 
+ 		ArrayList<Integer> res = new ArrayList<Integer>();
++		res.add(list.get(l));
+ 		for(; l < r; l++) {
+ 			res.add(list.get(l));
+ 		}
